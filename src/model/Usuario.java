@@ -11,12 +11,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import br.org.utd.model.Contato;
+import javax.persistence.Id;
 
 @Entity(name = "Usuario")
 @Table(name = "T_USUARIO")
-
 public class Usuario {
 	
 	@Id
@@ -39,6 +37,12 @@ public class Usuario {
 	
 	@Column(name="cidade")
 	private String cidade;
+        
+        @Column(name="email")
+        private String email;
+
+   
+	
 	
 	@OneToMany(mappedBy = "usuario") 
 	private Set<Livro> livros;
@@ -80,5 +84,12 @@ public class Usuario {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+        public String getEmail() {
+        return email;
+        }
+
+        public void setEmail(String email) {
+        this.email = email;
+        }
 
 }
