@@ -23,10 +23,12 @@ public class UsuarioView {
     private UsuarioDAO action = new UsuarioDaoImpl();
     
     
+    
+    //talvez tenha que ajeitar. (tem que se correlacionar user e password e não pelo tamanho da lista.)
      public String envia() {
      String retorno = null;
         List<Usuario> lst = action.listar(tabela_usuario);
-        if (lst.size() == 0) {
+        if (1 >= lst.size() ) {
             adicionarMensagem("email ou senha incorretos", null, null);
         } else {
             retorno = "/main";
@@ -36,6 +38,21 @@ public class UsuarioView {
      }
      
     
+     //Botões de navegação
+        public String retornarLogin() {
+        String retorno = null;
+        retorno = "/login";
+        return retorno;
+    }
+           public String irParaCadastro () {
+        String retorno = null;
+        retorno = "/cadastro";
+        return retorno;
+    }
+
+     
+     
+     
     //getters and setters
 
     public Usuario getTabela_usuario() {

@@ -25,7 +25,7 @@
             <h:inputSecret value="#{user.tabela_usuario.senha}" size="20" />
                 
             <p:commandButton value="Logar" action="#{user.envia}" />
-            <p:commandLink action="#{bean.doSomething()}" value="Ainda não é cadastrado? clique aqui."/>
+            <p:commandLink action="#{user.irParaCadastro()}" value="Ainda não é cadastrado? clique aqui." process="@this"/>
             </p:panelGrid>
              
 

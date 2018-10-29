@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastro</title>
+<link rel="StyleSheet" type="text/css" href="css/style.css" media="screen" />
+
+</h:head>
+     <div align="center" >
+    Cadastro Novo Usuario
+<h:body>
+    <h:form>
+        
+         
+            <p:panelGrid columns="2">
+            <p:outputLabel value="Nome"/>
+            <p:inputText value="#{user}" size="20" />
+            
+            <p:outputLabel value="Email:"/>
+            <p:inputText value="#{user}" size="20" />
+            
+                        
+            <p:outputLabel value="Senha:" />
+            <h:inputSecret value="#{user}" size="20" />
+            
+            <p:outputLabel value="Data de nascimento:"/>
+            <p:inputText value="#{user}" size="20" />
+            
+            <p:outputLabel value="Cidade:"/>
+            <p:inputText value="#{user}" size="20" />
+            
+            
+            
+                
+            <p:commandButton value="Cadastrar" action="#{user.envia}" />
+            <p:commandLink action="#{user.retornarLogin()}" value="Voltar para tela de login" process="@this"/>
+        </p:panelGrid>
+             
+        <h:messages />        
+        
+    </h:form>
+    
+</h:body>
+    </div>
+</html>
