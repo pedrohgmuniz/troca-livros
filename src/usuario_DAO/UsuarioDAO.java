@@ -8,6 +8,7 @@ package usuario_DAO;
 import java.util.List;
 import model.Usuario;
 
+
 public interface UsuarioDAO {
     public void inserir(Usuario obj);
 

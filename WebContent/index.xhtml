@@ -14,24 +14,23 @@
      <div align="center" >
     Bem vindo ao Troca Livros
 <h:body>
-    <h:form id="home" class="header" style="line-break: loose">
-        <nav class="nav" role="navigation" align="center">
-         <div align="center" class="container nav-elements">
-            <h:panelGrid columns="2">
+    <h:form>
+        
+         
+            <p:panelGrid columns="2">
                 <h:outputLabel value="Email:"/>
-            <h:inputText value="#{user.tabela_usuario.email}" size="20" />
+            <p:inputText value="#{user.tabela_usuario.email}" size="20" />
             
-            <h:outputLabel value="Senha:" />
+            <p:outputLabel value="Senha:" />
             <h:inputSecret value="#{user.tabela_usuario.senha}" size="20" />
                 
             <p:commandButton value="Logar" action="#{user.envia}" />
             <p:commandLink action="#{bean.doSomething()}" value="Ainda não é cadastrado? clique aqui."/>
-            </h:panelGrid>
-             </div>
+            </p:panelGrid>
+             
 
-        <h:messages /> 
+        <h:messages />        
         
-        </nav>
     </h:form>
     
 </h:body>

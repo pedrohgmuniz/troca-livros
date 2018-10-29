@@ -27,7 +27,7 @@ public class UsuarioView {
      String retorno = null;
         List<Usuario> lst = action.listar(tabela_usuario);
         if (lst.size() == 0) {
-            adicionarMensagem("Usuario nao cadastrado", null, null);
+            adicionarMensagem("email ou senha incorretos", null, null);
         } else {
             retorno = "/main";
         }
@@ -45,6 +45,15 @@ public class UsuarioView {
     public void setTabela_usuario(Usuario tabela_usuario) {
         this.tabela_usuario = tabela_usuario;
     }
+
+    public UsuarioDAO getAction() {
+        return action;
+    }
+
+    public void setAction(UsuarioDAO action) {
+        this.action = action;
+    }
+    
    //Outros
      public void adicionarMensagem(String sumario, String detalhe, String pagina) {
         FacesMessage mensagem = new FacesMessage(sumario, detalhe);

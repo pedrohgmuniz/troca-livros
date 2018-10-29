@@ -23,7 +23,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
             em.getTransaction().begin();
             em.persist(obj);
             em.getTransaction().commit();
-            System.out.println("REGISTRO INSERIDO COM SUCESSO");
+            System.out.println("Usuario inserido com sucesso");
         } catch (Exception e) {
             System.err.println("erro" + e.getMessage());
         } finally {
@@ -39,7 +39,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
             em.getTransaction().begin();
             em.merge(obj);
             em.getTransaction().commit();
-            System.out.println("REGISTRO ALTERADO COM SUCESSO");
+            System.out.println("Usuario alterado com sucesso");
         } catch (Exception e) {
             System.err.println("erro" + e.getMessage());
         } finally {
@@ -56,7 +56,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
             Usuario contato = em.find(Usuario.class, obj.getCodUsuario());
             em.remove(contato);
             em.getTransaction().commit();
-            System.out.println("REGISTRO EXCLUÍDO COM SUCESSO");
+            System.out.println("Usuario deletado com sucesso");
         } catch (Exception e) {
             System.err.println("erro" + e.getMessage());
         } finally {
