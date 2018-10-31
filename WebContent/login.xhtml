@@ -17,16 +17,16 @@
     <h:form>
         
          
-            <p:panelGrid columns="2">
-                <h:outputLabel value="Email:"/>
-            <p:inputText value="#{user.tabela_usuario.email}" size="20" />
+            <h:panelGrid columns="2">
+            <h:outputLabel value="Email:"/>
+            <h:inputText value="#{user.tabela_usuario.email}" size="20" />
             
-            <p:outputLabel value="Senha:" />
+            <h:outputLabel value="Senha:" />
             <h:inputSecret value="#{user.tabela_usuario.senha}" size="20" />
                 
-            <p:commandButton value="Logar" action="#{user.envia}" />
-            <p:commandLink action="#{user.irParaCadastro()}" value="Ainda não é cadastrado? clique aqui." process="@this"/>
-            </p:panelGrid>
+            <h:commandButton value="Logar" action="#{user.envia}" />
+            <h:commandLink action="#{user.irParaCadastro()}" value="Ainda não é cadastrado? clique aqui." process="@this"/>
+            </h:panelGrid>
              
 
         <h:messages />        

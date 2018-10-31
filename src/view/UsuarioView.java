@@ -5,7 +5,7 @@
  */
 package view;
 
-import usuario_DAO.UsuarioDaoImpl;
+import daoImpl.UsuarioDaoImpl;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,13 +14,13 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import model.Usuario;
-import usuario_DAO.UsuarioDAO;
+import dao.UsuarioDao;
 
 @ManagedBean(name = "user")
 @ViewScoped
 public class UsuarioView {
     private Usuario tabela_usuario = new Usuario();
-    private UsuarioDAO action = new UsuarioDaoImpl();
+    private UsuarioDaoImpl action = new UsuarioDaoImpl();
     
     
     
@@ -63,11 +63,11 @@ public class UsuarioView {
         this.tabela_usuario = tabela_usuario;
     }
 
-    public UsuarioDAO getAction() {
+    public UsuarioDao getAction() {
         return action;
     }
 
-    public void setAction(UsuarioDAO action) {
+    public void setAction(UsuarioDao action) {
         this.action = action;
     }
     
