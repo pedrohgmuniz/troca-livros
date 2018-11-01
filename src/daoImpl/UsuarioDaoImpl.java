@@ -1,8 +1,13 @@
 package daoImpl;
 
+import controller.ResourcePersistence;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.EntityManager;
+import model.Usuario;
+
 public class UsuarioDaoImpl {
 
-	@Override
 	public void inserir(Usuario obj) {
 		EntityManager em = ResourcePersistence.getEntityManager();
 		try {
@@ -18,7 +23,6 @@ public class UsuarioDaoImpl {
 
 	}
 
-	@Override
 	public void alterar(Usuario obj) {
 		EntityManager em = ResourcePersistence.getEntityManager();
 		try {
@@ -34,7 +38,6 @@ public class UsuarioDaoImpl {
 
 	}
 
-	@Override
 	public void deletar(Usuario obj) {
 		EntityManager em = ResourcePersistence.getEntityManager();
 		try {
@@ -51,7 +54,6 @@ public class UsuarioDaoImpl {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<Usuario> listar(Usuario obj) {
 		EntityManager em = ResourcePersistence.getEntityManager();
 		List<Usuario> lista = new ArrayList<Usuario>();

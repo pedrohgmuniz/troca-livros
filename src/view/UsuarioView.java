@@ -6,15 +6,12 @@
 package view;
 
 import daoImpl.UsuarioDaoImpl;
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import model.Usuario;
-import dao.UsuarioDao;
 
 @ManagedBean(name = "user")
 @ViewScoped
@@ -63,14 +60,14 @@ public class UsuarioView {
         this.tabela_usuario = tabela_usuario;
     }
 
-    public UsuarioDao getAction() {
+    public UsuarioDaoImpl getAction() {
         return action;
     }
 
-    public void setAction(UsuarioDao action) {
+    public void setAction(UsuarioDaoImpl action) {
         this.action = action;
     }
-    
+
    //Outros
      public void adicionarMensagem(String sumario, String detalhe, String pagina) {
         FacesMessage mensagem = new FacesMessage(sumario, detalhe);
