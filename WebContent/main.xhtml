@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>  
+  <li><a href="#about">Buscar</a></li>
+  <li><a href="#contact">Mensagens</a></li>
+  <li><a href="#about">Meus livros</a></li>  
+  <li><a href="#about">Minha Conta</a></li>  
+</ul>
+         
+    <h3>Adicione um livro para troca</h3>
+
+<div>
+
+<form action="upload.php" method="post" enctype="multipart/form-data"/>
+    Selecione uma imagem para upload:
+    <input type="file" name="fileToUpload" id="fileToUpload"/>
+	
+  </div>
+  <div>
+      <form>
+   <label for="isbnlivro">ISBN do livro (apenas números) </label>
+    <input type="text" id="isbnlivro" name="isbnl" placeholder="13 ou 10 dígitos.."/>   
+    
+    <label for="tlivro">Título</label>
+    <input type="text" id="tlivro" name="titulolivro"/>
+    
+    <label for="autorl">Autor</label>
+    <input type="text" id="autorl" name="autorlivro"/>
+    
+    <label for="editora">Editora</label>
+    <input type="text" id="editora" name="editoralivro"/>
+    
+     <label for="edicaol">Edição</label>
+    <input type="text" id="edicaol" name="edicaolivro"/>
+    
+     <label for="aedicao">Ano de Edição</label>
+    <input type="text" id="aedicao" name="anoedicao"/>    
+    
+    
+
+    <label for="country">Gênero</label>
+    <select id="country" name="country">
+      <option value="australia">Drama</option>
+      <option value="canada">Romance</option>
+      <option value="usa">Mistério</option>
+    </select>
+    
+     
+     <input type="submit" value="Adicionar" name="submit"/>
+  </form>
+</div>
+    
+
+</body>
+
+
+</html>
