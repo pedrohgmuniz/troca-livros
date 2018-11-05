@@ -24,19 +24,10 @@ public class InfosTecnicas {
 	
 	@Column(name="TITULO")
 	private String titulo;
-	
-	@Column(name="EDICAO")
-	private int edicao;
-	
+		
 	@Column(name="ANO_EDICAO")
 	private int anoEdicao;
-	
-	@Column(name="TIPO_SUPORTE")
-	private String tipoSuporte;
-	
-	@Column(name="NUM_PAGINAS")
-	private int numPaginas;
-	
+			
 	@Column(name="EDITORA")
 	private String editora; // Até aqui, na ordem do site http://www.isbn.bn.br/website/consulta/cadastro
 							// "AUTOR" substitui "PARTICIPAÇÕES" no site, e "GÊNERO" é uma coluna extra
@@ -46,7 +37,7 @@ public class InfosTecnicas {
 	@Column(name="GENERO")
 	private String genero;
 	
-	@OneToMany(mappedBy="infosTecnicas") 
-	private Set<Livro> livro;
+//	@OneToMany(mappedBy="infosTecnicas") 
+//	private Set<Livro> livro;
 
 }

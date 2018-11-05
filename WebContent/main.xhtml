@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
 
 
-<head>
+<h:head>
 <style>
 ul {
     list-style-type: none;
@@ -60,7 +60,7 @@ div {
     padding: 20px;
 }
 </style>
-</head>
+</h:head>
 <body>
 
 <ul>
@@ -81,23 +81,32 @@ div {
 	
   </div>
   <div>
-      <form>
-   <label for="isbnlivro">ISBN do livro (apenas números) </label>
-    <input type="text" id="isbnlivro" name="isbnl" placeholder="13 ou 10 dígitos.."/>   
+      
+    <h:form>
+          
+      
+         <h:outputText value="ISBN: "/>
+         <h:inputText id="inputID" value="#{livro.isbn}" >
+                    <f:ajax event="keyup" render="inputTitulo" execute="@this" />
+                    <f:ajax event="keyup" render="inputAutor" execute="@this" />
+          </h:inputText>
+          <h:outputText value="Book: "/>
+          <h:inputText id="inputTitulo" value="#{livro.titulo}"/>
+          <h:outputText value="Author: "/>
+          <h:inputText id="inputAutor" value="#{livro.autor}"/>
+                
+     
+      
+
     
-    <label for="tlivro">Título</label>
-    <input type="text" id="tlivro" name="titulolivro"/>
-    
-    <label for="autorl">Autor</label>
-    <input type="text" id="autorl" name="autorlivro"/>
     
     <label for="editora">Editora</label>
     <input type="text" id="editora" name="editoralivro"/>
     
-     <label for="edicaol">Edição</label>
+<!--     <label for="edicaol">Edição</label>
     <input type="text" id="edicaol" name="edicaolivro"/>
-    
-     <label for="aedicao">Ano de Edição</label>
+    -->
+     <label for="aedicao">Ano de Publicação</label>
     <input type="text" id="aedicao" name="anoedicao"/>    
     
     
@@ -111,7 +120,7 @@ div {
     
      
      <input type="submit" value="Adicionar" name="submit"/>
-  </form>
+  </h:form>
 </div>
     
 
