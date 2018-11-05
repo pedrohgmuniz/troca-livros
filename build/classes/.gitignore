@@ -1,4 +1,6 @@
-/view/
+/META-INF/
+/controller/
 /dao/
 /daoImpl/
-/META-INF/
+/model/
+/view/

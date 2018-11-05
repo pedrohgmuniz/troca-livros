@@ -4,35 +4,96 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
-    
+
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Login</title>
-<link rel="StyleSheet" type="text/css" href="css/style.css" media="screen" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+body, html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+* {
+    box-sizing: border-box;
+}
+
+.bg-img {
+    /* The image used */
+    background-image: url("https://flowork.com.br/wp-content/uploads/2018/02/13-livros-para-inspirar-o-seu-negocio-flowork-escritorios-mobiliados-green-office-moinhos-de-vento-porto-alegre-rs-00.png");
+
+    min-height: 795px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+</style>
 </h:head>
-     <div align="center" >
-    Bem vindo ao Troca Livros
 <h:body>
-    <h:form>
-        
-         
-            <h:panelGrid columns="2">
-            <h:outputLabel value="Email:"/>
-            <h:inputText value="#{user.tabela_usuario.email}" size="20" />
-            
-            <h:outputLabel value="Senha:" />
-            <h:inputSecret value="#{user.tabela_usuario.senha}" size="20" />
-                
-            <h:commandButton value="Logar" action="#{user.envia}" />
-            <h:commandLink action="#{user.irParaCadastro()}" value="Ainda não é cadastrado? clique aqui." />
-            </h:panelGrid>
-             
 
-        <h:messages />        
-        
-    </h:form>
-    
+<p></p>
+<p></p>
+<p></p>
+<div class="bg-img">
+  <h:form action="/action_page.php" class="container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Digite o E-mail" name="email"/>
+    <!--  <input type="text" id="aedicao" name="anoedicao"/> -->
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Digite sua senha" name="psw"/>
+
+    <h:button type="submit" class="btn" value="Login"></h:button>
+<p> </p>
+    <h:button type="submit" class="btn" value="Cadastrar"></h:button>
+  </h:form>
+</div>
+
+
 </h:body>
-    </div>
+
+
 </html>
