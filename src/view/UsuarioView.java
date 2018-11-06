@@ -24,17 +24,7 @@ public class UsuarioView {
     
     
     //talvez tenha que ajeitar. (tem que se correlacionar user e password e não pelo tamanho da lista.)
-     public String envia() {
-     String retorno = null;
-        List<Usuario> lst = action.listar(tabela_usuario);
-        if (1 >= lst.size() ) {
-            adicionarMensagem("email ou senha incorretos", null, null);
-        } else {
-            retorno = "/main";
-        }
-        return retorno;
-    
-     }
+
      
     
      //Botões de navegação
@@ -51,7 +41,7 @@ public class UsuarioView {
 
     public String envia() {
         String retorno = null;
-        List<Usuario> lst = uf.listar(usuario);
+        List<Usuario> lst = action.listar();
         if (lst.size() == 0) {
             adicionarMensagem("USUARIO N�O ENCONTRADO", null, null);
         } else {
@@ -72,7 +62,7 @@ public class UsuarioView {
         this.tabela_usuario = tabela_usuario;
     }
 
-    public UsuarioDaoImpl getAction() {
+    public UsuarioDao getAction() {
         return action;
     }
 
