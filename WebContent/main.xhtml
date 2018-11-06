@@ -1,129 +1,130 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 
 
 <h:head>
-<style>
+	<style>
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
 }
 
 li {
-    float: left;
+	float: left;
 }
 
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 li a:hover {
-    background-color: #111;
+	background-color: #111;
 }
+
 input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+	background-color: #45a049;
 }
 
 div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
 }
 </style>
 </h:head>
 <body>
 
-<ul>
-  <li><a class="active" href="#home">Home</a></li>  
-  <li><a href="#about">Buscar</a></li>
-  <li><a href="#contact">Mensagens</a></li>
-  <li><a href="#about">Meus livros</a></li>  
-  <li><a href="#about">Minha Conta</a></li>  
-</ul>
-         
-    <h3>Adicione um livro para troca</h3>
+	<ul>
+		<li><a class="active" href="#home">Home</a></li>
+		<li><a href="#about">Buscar</a></li>
+		<li><a href="#contact">Mensagens</a></li>
+		<li><a href="#about">Meus livros</a></li>
+		<li><a href="#about">Minha Conta</a></li>
+	</ul>
 
-<div>
+	<h3>Adicione um livro para troca</h3>
 
-<form action="upload.php" method="post" enctype="multipart/form-data"/>
-    Selecione uma imagem para upload:
-    <input type="file" name="fileToUpload" id="fileToUpload"/>
-	
-  </div>
-  <div>
-      
-    <h:form>
-          
-      
-         <h:outputText value="ISBN: "/>
-         <h:inputText id="inputID" value="#{livro.isbn}" >
-                    <f:ajax event="keyup" render="inputTitulo" execute="@this" />
-                    <f:ajax event="keyup" render="inputAutor" execute="@this" />
-                    <f:ajax event="keyup" render="editora" execute="@this" />
-                    <f:ajax event="keyup" render="aedicao" execute="@this" />
-          </h:inputText>
-          <h:outputText value="Livro: "/>
-          <h:inputText id="inputTitulo" value="#{livro.titulo}"/>
-          <h:outputText value="Autor: "/>
-          <h:inputText id="inputAutor" value="#{livro.autor}"/>
-                
-        
+	<div>
 
-    
-    
-    <label for="editora">Editora</label>
-    <h:inputText  id="editora" value="#{livro.editora}"/>
-    
-<!--     <label for="edicaol">Edição</label>
+		<form action="upload.php" method="post" enctype="multipart/form-data" />
+		Selecione uma imagem para upload: <input type="file"
+			name="fileToUpload" id="fileToUpload" />
+
+	</div>
+	<div>
+
+		<h:form>
+
+
+			<h:outputText value="ISBN: " />
+			<h:inputText id="inputID" value="#{livro.isbn}">
+				<f:ajax event="keyup" render="inputTitulo" execute="@this" />
+				<f:ajax event="keyup" render="inputAutor" execute="@this" />
+				<f:ajax event="keyup" render="editora" execute="@this" />
+				<f:ajax event="keyup" render="aedicao" execute="@this" />
+			</h:inputText>
+			<h:outputText value="Livro: " />
+			<h:inputText id="inputTitulo" value="#{livro.titulo}" />
+			<h:outputText value="Autor: " />
+			<h:inputText id="inputAutor" value="#{livro.autor}" />
+
+
+
+
+
+			<label for="editora">Editora</label>
+			<h:inputText id="editora" value="#{livro.editora}" />
+
+			<!--     <label for="edicaol">Edição</label>
     <input type="text" id="edicaol" name="edicaolivro"/>
     -->
-     <label for="aedicao">Ano de Publicação</label>
-    <h:inputText id="aedicao" value="#{livro.anoPublicacao}"/>    
-    
-    
+			<label for="aedicao">Ano de Publicação</label>
+			<h:inputText id="aedicao" value="#{livro.anoPublicacao}" />
 
-    <label for="country">Gênero</label>
-    <select id="country" name="country">
-      <option value="australia">Drama</option>
-      <option value="canada">Romance</option>
-      <option value="usa">Mistério</option>
-    </select>
-    
-     
-     <input type="submit" value="Adicionar" name="submit"/>
-  </h:form>
-</div>
-    
+
+
+			<label for="country">Gênero</label>
+			<select id="country" name="country">
+				<option value="australia">Romance</option>
+				<option value="canada">Não-ficção</option>
+				<option value="usa">Fantasia/Ficção científica</option>
+			</select>
+
+
+			<input type="submit" value="Adicionar" name="submit" />
+		</h:form>
+	</div>
+
 
 </body>
 
