@@ -1,12 +1,13 @@
 package daoImpl;
 
 import controller.ResourcePersistence;
+import dao.UsuarioDao;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import model.Usuario;
 
-public class UsuarioDaoImpl {
+public class UsuarioDaoImpl implements UsuarioDao {
 
 	public void inserir(Usuario obj) {
 		EntityManager em = ResourcePersistence.getEntityManager();

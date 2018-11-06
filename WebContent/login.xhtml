@@ -75,7 +75,7 @@ input[type=text]:focus, input[type=password]:focus {
 	<p></p>
 	<p></p>
 	<div class="bg-img">
-		<h:form action="/action_page.php" class="container">
+		<form action="/action_page.php" class="container">
 			<h1>Login</h1>
 
 			<label for="email"><b>Email</b></label>
@@ -85,10 +85,10 @@ input[type=text]:focus, input[type=password]:focus {
 			<label for="psw"><b>Password</b></label>
 			<input type="password" placeholder="Digite sua senha" name="psw" />
 
-			<h:button type="submit" class="btn" value="Login"></h:button>
+			 <h:commandButton value="Logar" action="#{user.envia}" />
 			<p></p>
-			<h:button type="submit" class="btn" value="Cadastrar"></h:button>
-		</h:form>
+			<h:commandButton  type="submit" class="btn" value="Cadastrar" action="#{user.irParaCadastro}" />
+		</form>
 	</div>
 
 

@@ -5,6 +5,7 @@
  */
 package view;
 
+import dao.UsuarioDao;
 import daoImpl.UsuarioDaoImpl;
 import java.util.List;
 import javax.faces.application.FacesMessage;
@@ -17,7 +18,8 @@ import model.Usuario;
 @ViewScoped
 public class UsuarioView {
     private Usuario tabela_usuario = new Usuario();
-    private UsuarioDaoImpl action = new UsuarioDaoImpl();
+    private UsuarioDao action = new UsuarioDaoImpl();
+    
     
     
     
@@ -47,6 +49,16 @@ public class UsuarioView {
         return retorno;
     }
 
+    public String envia() {
+        String retorno = null;
+        List<Usuario> lst = uf.listar(usuario);
+        if (lst.size() == 0) {
+            adicionarMensagem("USUARIO N�O ENCONTRADO", null, null);
+        } else {
+            retorno = "/main";
+        }
+        return retorno;
+    }
      
      
      
