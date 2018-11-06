@@ -13,6 +13,8 @@ public class LivroView {
 	private String isbn;
 	private String autor;
 	private String titulo;
+        private String editora;
+        private String anoPublicacao;
 	// Private String name;
 
 	public String getIsbn() { 
@@ -27,6 +29,8 @@ public class LivroView {
 		for (Item i : fullJsonObject.items) {
 			autor =i.volumeInfo.authors[0] ;
 			titulo =  i.volumeInfo.title;
+                        editora = i.volumeInfo.publisher;
+                        anoPublicacao = i.volumeInfo.publishedDate;
 		}
 	}
 
@@ -39,6 +43,8 @@ public class LivroView {
 		{
 			autor = "procurando";
 			titulo = "procurando";
+                        editora = "procurando";
+                        anoPublicacao = "procurando";
 		}
 	}
 
@@ -58,6 +64,24 @@ public class LivroView {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+
+    public String getEditora() {
+        return editora;
+    }
+
+    public void setEditora(String editora) {
+        this.editora = editora;
+    }
+
+    public String getAnoPublicacao() {
+        return anoPublicacao;
+    }
+
+    public void setAnoPublicacao(String anoPublicacao) {
+        this.anoPublicacao = anoPublicacao;
+    }
+        
+        
 
 	//Classes auxiliares
 	private class Container {        

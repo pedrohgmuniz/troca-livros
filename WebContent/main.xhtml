@@ -89,25 +89,26 @@ div {
          <h:inputText id="inputID" value="#{livro.isbn}" >
                     <f:ajax event="keyup" render="inputTitulo" execute="@this" />
                     <f:ajax event="keyup" render="inputAutor" execute="@this" />
+                    <f:ajax event="keyup" render="editora" execute="@this" />
+                    <f:ajax event="keyup" render="aedicao" execute="@this" />
           </h:inputText>
-          <h:outputText value="Book: "/>
+          <h:outputText value="Livro: "/>
           <h:inputText id="inputTitulo" value="#{livro.titulo}"/>
-          <h:outputText value="Author: "/>
+          <h:outputText value="Autor: "/>
           <h:inputText id="inputAutor" value="#{livro.autor}"/>
                 
-     
-      
+        
 
     
     
     <label for="editora">Editora</label>
-    <input type="text" id="editora" name="editoralivro"/>
+    <h:inputText  id="editora" value="#{livro.editora}"/>
     
 <!--     <label for="edicaol">Edição</label>
     <input type="text" id="edicaol" name="edicaolivro"/>
     -->
      <label for="aedicao">Ano de Publicação</label>
-    <input type="text" id="aedicao" name="anoedicao"/>    
+    <h:inputText id="aedicao" value="#{livro.anoPublicacao}"/>    
     
     
 
