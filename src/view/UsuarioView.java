@@ -62,7 +62,7 @@ public class UsuarioView {
             usuario = new Usuario();
         }
         return retorno;
-
+     }
 
      
      
