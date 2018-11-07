@@ -33,7 +33,7 @@ public class UsuarioView {
         retorno = "/login";
         return retorno;
     }
-           public String irParaCadastro () {
+        public String irParaCadastro () {
         String retorno = null;
         retorno = "/cadastro";
         return retorno;
