@@ -79,11 +79,11 @@ input[type=text]:focus, input[type=password]:focus {
 			<h1>Login</h1>
                             
 			<label for="emailUser"><b>Email</b></label>
-			<h:inputText  id="emailUser" value="#{user}" />
+			<h:inputText  id="emailUser" value="#{user.usuario.email}" />
 			
 
 			<label for="senhaUser"><b>Password</b></label>
-			<h:inputText  id="senhaUser" value="#{user}" />
+                        <h:inputSecret  id="senhaUser" value="#{user.usuario.senha}" />
 
 			 <h:commandButton type="submit" value="Logar" class="btn" action="#{user.envia}" />
 			<p></p>

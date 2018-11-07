@@ -81,32 +81,32 @@ a {
 			<hr />
 			
 			<label for="nome"><b>Nome</b></label> 
-			<input type="text" placeholder="Digite seu nome" name="email"  /> 
+			<input type="text" placeholder="Digite seu nome" name="email" value="#{user.usuario.email}"  /> 
 
 			<label for="email"><b>E-mail</b></label> 
-			<input type="text" placeholder="Digite seu E-mail" name="email"  /> 
+			<input type="text" placeholder="Digite seu E-mail" name="email" value="#{user.usuario.email}" /> 
 			
 			
 	
 			<label for="psw"><b>Password</b></label> 
-			<input type="password" placeholder="Digite a senha" name="psw"  /> 
+			<input type="password" placeholder="Digite a senha" name="psw"  value="#{user.usuario.email}" /> 
 			
 			<label for="psw-repeat"><b>Repeat Password</b></label> 
-			<input type="password" placeholder="Confirmar a senha" name="psw-repeat" />
+			<input type="password" placeholder="Confirmar a senha" name="psw-repeat" value="#{user.usuario.email}" />
 			
 			<label for="idade"><b>Idade</b></label> 
-			<input type="text" placeholder="00/00/0000" name="idade"  /> 
+			<input type="text" placeholder="00/00/0000" name="idade" value="#{user.usuario.email}"  /> 
 			
 		
 		    <label for="cep"><b>CEP</b></label> 
-			<input type="text" placeholder="00000000" name="cep"  /> 
+			<input type="text" placeholder="00000000" name="cep" value="#{user.usuario.email}" /> 
 			
 			<hr />
 
 
-			<h:button type="submit" class="registerbtn" value="Cadastrar"></h:button>
+			<h:commandButton type="submit" class="registerbtn" value="Cadastrar"/>
 			<p></p>
-			<h:button type="submit" class="registerbtn" value="Voltar"></h:button>
+			<h:commandButton  class="registerbtn" value="Cadastrar" action="#{user.irParaCadastro}" />
 		</div>
 
 		<div class="container signin"></div>

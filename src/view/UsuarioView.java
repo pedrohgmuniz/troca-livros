@@ -19,6 +19,8 @@ import model.Usuario;
 public class UsuarioView {
     private Usuario tabela_usuario = new Usuario();
     private UsuarioDao action = new UsuarioDaoImpl();
+    private Usuario usuario = new Usuario();
+    private String confirmaSenha = null;
     
     
     
@@ -39,21 +41,43 @@ public class UsuarioView {
         return retorno;
     }
 
+        //submissão 
     public String envia() {
         String retorno = null;
-        List<Usuario> lst = action.listar();
-        if (lst.size() == 0) {
+        List<Usuario> lst = action.listar(usuario);
+        if (lst.isEmpty()) {
             adicionarMensagem("USUARIO N�O ENCONTRADO", null, null);
         } else {
             retorno = "/main";
         }
         return retorno;
     }
+     public String inserir() {
+        String retorno = null;
+        if (!usuario.getSenha().equalsIgnoreCase(this.getConfirmaSenha())) {
+            adicionarMensagem("CONFIRME A SENHA.", null, null);
+        } else {
+            action.inserir(usuario);
+            adicionarMensagem("REGISTRO INSERIDO COM SUCESSO.", null, null);
+            usuario = new Usuario();
+        }
+        return retorno;
+
+
      
      
      
     //getters and setters
+    
+   
+    public String getConfirmaSenha() {
+        return confirmaSenha;
+    }
 
+    public void setConfirmaSenha(String confirmaSenha) {
+        this.confirmaSenha = confirmaSenha;
+    }
+     
     public Usuario getTabela_usuario() {
         return tabela_usuario;
     }
@@ -67,8 +91,17 @@ public class UsuarioView {
     }
 
     public void setAction(UsuarioDaoImpl action) {
-        this.action = action;
+        this.action = action;        
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
 
    //Outros
      public void adicionarMensagem(String sumario, String detalhe, String pagina) {
