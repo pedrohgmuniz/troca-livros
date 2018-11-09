@@ -6,13 +6,10 @@
 <title>Busca</title>
 </head>
 <style>
-
 th, td, h1, p {
     text-align: center;
 }
-
 </style>
-</head>
 <body>
 
 	<h1>BUSCAR LIVROS</h1>
@@ -22,17 +19,14 @@ th, td, h1, p {
     <table align="center" width="100%" border="0">
 		<tbody>
 			<tr>
-				<td><br></br> <label><b>Título do livro:</b></label> 
+				<td><label><b>Título do livro:</b></label> 
 				<input name="req" id="searchform" size="24" maxlength="80" value=""/> 
 				<input type="submit" onclick="this.disabled=" value="Buscar!"/>
 
 							<p></p>
 							
-						<label><b>Buscar por autor:</b></label> <select name="open" size="1">
-						<option value="josedealencar" selected="selected">José de Alencar</option>
-						<option value="machadodeassis">Machado de Assis</option>
-						<option value="jkrowling">J. K. Rowling</option>
-						<option value="tolkien">J. R. R. Tolkien</option></select> 
+						<label><b>Buscar por autor:</b></label>
+						<input name="req" id="searchform" size="24" maxlength="80" value=""/> 
 						<input type="submit" onclick="this.disabled=" value="Buscar!"/>
 
 						<p></p>
@@ -60,27 +54,41 @@ th, td, h1, p {
     <table align="center" rules="rows" class="c" cellspacing="1" cellpadding="1">
 		<tbody>
 
-			<tr valign="top" bgcolor="#b5e3d7">
-            	<ul style="list-style-type:none">
-					<td><img src="https://quilombonoroeste.files.wordpress.com/2014/08/c5a756829a6609904c0296245887fbbc249.jpg" height="120" width="85" /></td>
-					<td>
-                    	<li><a>José de Alencar</a></li>
-						<li><a href="book/index.php?md5=C82C4EEEA5BF93A5876AD6106D5B0B5A" title="" id="485419">Iracema<font face="Times" color="green"></font></a></li>
-						Nova Cultural
+			<tr valign="top" bgcolor="">
+            	<td>
+              		<img src="https://quilombonoroeste.files.wordpress.com/2014/08/c5a756829a6609904c0296245887fbbc249.jpg" height="180" width="125" />
+                </td>
+				<td>
+                	<ul style="list-style-type:none">
+                    	<li>Iracema</li>
+                        <li><a href="" title="" id="">José de Alencar</a></li>
+						<li>Nova Cultural</li>
 						<li>1999</li>
-                </ul>
+                    </ul>
+            	</td>
+                <td>
+                	<input type="submit" onclick="this.disabled=" value="Solicitar troca!"/>
+                </td>
 			</tr>
 
 			<tr valign="top" bgcolor="">
-				<td><img src="https://quilombonoroeste.files.wordpress.com/2014/08/c5a756829a6609904c0296245887fbbc249.jpg" height="120" width="85" /></td>
-				<td><a>José de Alencar</a></td>
-				<td><a href="book/index.php?md5=C82C4EEEA5BF93A5876AD6106D5B0B5A" title="" id="485419">Iracema<font face="Times" color="green"></font></a></td>
-				<td>Nova Cultural</td>
-				<td>1999</td>
-				<td>100</td>
+				<td>
+                	<img src="https://quilombonoroeste.files.wordpress.com/2014/08/c5a756829a6609904c0296245887fbbc249.jpg" height="180" width="125" />
+                </td>
+				<td>
+                    <ul style="list-style-type:none">
+                    	<li>Iracema</li>
+                        <li><a href="" title="" id="">José de Alencar</a></li>
+						<li>Nova Cultural</li>
+						<li>1999</li>
+                	</ul>
+            	</td>
+                <td>
+                	<input type="submit" onclick="this.disabled=" value="Solicitar troca!"/>
+                </td>
 			</tr>
+            
 		</tbody>
-	</table>
-
+</table>
 </body>
 </html>
