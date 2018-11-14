@@ -27,6 +27,9 @@ public class Usuario {
 
 	@Column(name="SENHA", nullable=false, unique=false)
 	private String senha;
+        
+        @Column(name="SEXO", nullable=false, unique=false)
+	private String sexo;
 
 	@Column(name="ULTIMO_ACESSO")
 	@Temporal(TemporalType.DATE)
@@ -45,6 +48,7 @@ public class Usuario {
 	private Set<Livro> livros;
 	
 	// GETTERS and SETTERS:
+        
 	public int getCodUsuario() {
 		return codUsuario;
 	}
@@ -86,6 +90,15 @@ public class Usuario {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+
+         public String getSexo() {
+        return sexo;
+           }
+
+         public void setSexo(String sexo) {
+        this.sexo = sexo;
+          }
+        
 
 	public String getEmail() {
 		return email;
